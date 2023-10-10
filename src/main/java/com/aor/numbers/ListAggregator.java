@@ -1,5 +1,7 @@
 package com.aor.numbers;
 
+import com.sun.tools.jdi.GenericListeningConnector;
+
 import java.util.List;
 
 /**
@@ -25,7 +27,7 @@ public class ListAggregator {
      * @return The maximum value in the list.
      */
     public Integer max(List<Integer> list) {
-        int max = 0;
+        int max = Integer.MIN_VALUE;
 
         for (Integer number : list)
             if (number > max)
@@ -52,8 +54,8 @@ public class ListAggregator {
      * Counts the number of distinct numbers in a list.
      * @return The number of distinct numbers.
      */
-    public int distinct(List<Integer> list) {
-        ListDeduplicator deduplicator = new ListDeduplicator();
+    public int distinct(List<Integer> list, ListDeduplicator deduplicator) {
+
         List<Integer> distinct = deduplicator.deduplicate(list);
 
         return distinct.size();

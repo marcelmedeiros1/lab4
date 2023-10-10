@@ -1,12 +1,13 @@
 package com.aor.numbers;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ListDeduplicatorTest {
+public class ListDeduplicatorTest extends ListAggregatorTest {
 
     @Test
     public void deduplicate() {
