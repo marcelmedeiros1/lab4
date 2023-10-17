@@ -14,7 +14,8 @@ public class ListDeduplicatorTest extends ListAggregatorTest {
         List<Integer> list = Arrays.asList(1,2,4,2,5);
         List<Integer> expected = Arrays.asList(1,2,4,5);
 
-        ListDeduplicator deduplicator = new ListDeduplicator();
+        GenericListSorter sorter = new ListSorter();
+        ListDeduplicator deduplicator = new ListDeduplicator(sorter);
         List<Integer> distinct = deduplicator.deduplicate(list);
 
         Assertions.assertEquals(expected, distinct);

@@ -50,7 +50,8 @@ public class ListAggregatorTest {
         List<Integer> bugList = Arrays.asList(1, 2, 4, 2);
 
         ListAggregator aggregator = new ListAggregator();
-        ListDeduplicator deduplicator = new ListDeduplicator();
+        GenericListSorter sorter = new ListSorter();
+        ListDeduplicator deduplicator = new ListDeduplicator(sorter);
         int distinct = aggregator.distinct(bugList, deduplicator);
 
         Assertions.assertEquals(3, distinct);
@@ -60,7 +61,8 @@ public class ListAggregatorTest {
     public void distinct() {
 
         ListAggregator aggregator = new ListAggregator();
-        ListDeduplicator deduplicator = new ListDeduplicator();
+        GenericListSorter sorter = new ListSorter();
+        ListDeduplicator deduplicator = new ListDeduplicator(sorter);
         int distinct = aggregator.distinct(list, deduplicator);
 
         Assertions.assertEquals(4, distinct);
